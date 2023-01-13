@@ -2,19 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="views\list.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>To Do List</title>
 </head>
 <body>
-    <h1><%= weekDay %></h1>
-    <li>
+    <div class="box" id="heading">
+        <h1><%= weekDay %></h1>
+    </div>
+    <div class="box">
         <% for(var i =0; i<itemArray.length; i++){%>
-            <ul><%=itemArray[i]%></ul>
-        <%}%>
-    </li>
-    <form class="" action="/" method="post">
-        <input type="text" name="newInput">
-        <button type="submit" name="button">add</button>
-    </form>
+            <div class="item">
+                <input type="checkbox">
+                <p><%=itemArray[i]%></p>
+            </div>
+        <%}%> 
+
+        <form class="" action="/" method="post">
+            <input type="text" name="newInput" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+    </div>
+
+    
 </body>
 </html>
