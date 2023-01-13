@@ -5,10 +5,15 @@
     <title>To Do List</title>
 </head>
 <body>
-<% if(weekDay==="Saturday" || weekDay==="Sunday"){ %>
-    <h1 style="color: rgb(222, 114, 114);"><%= weekDay %> ToDo List </h1>
-<%} else{%>
-    <h1 style="color: rgb(99, 158, 247);"><%= weekDay%> ToDo List</h1>
-<%}%>
+    <h1><%= weekDay %></h1>
+    <li>
+        <% for(var i =0; i<itemArray.length; i++){%>
+            <ul><%=itemArray[i]%></ul>
+        <%}%>
+    </li>
+    <form class="" action="/" method="post">
+        <input type="text" name="newInput">
+        <button type="submit" name="button">add</button>
+    </form>
 </body>
 </html>
