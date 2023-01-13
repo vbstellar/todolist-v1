@@ -5,6 +5,10 @@
     <title>To Do List</title>
 </head>
 <body>
-    <h1>Today is <%= weekDay %></h1>
+<% if(weekDay==="Saturday" || weekDay==="Sunday"){ %>
+    <h1 style="color: rgb(222, 114, 114);"><%= weekDay %> ToDo List </h1>
+<%} else{%>
+    <h1 style="color: rgb(99, 158, 247);"><%= weekDay%> ToDo List</h1>
+<%}%>
 </body>
 </html>
