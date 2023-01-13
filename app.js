@@ -3,13 +3,40 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.get("/", function (req, res) {
   var today = new Date();
-  if (today.getDate() === 0 || today.getDate() === 6) {
-    res.write("<h1>Hurray! today is weekend.</h1>");
-  } else {
-    res.sendFile(__dirname + "/index.html");
+  var currentDay = today.getDay();
+  var day = "";
+  switch (currentDay) {
+    case 0:
+      day = "Sunday";
+      break;
+    case 1:
+      day = "Monday";
+      break;
+    case 2:
+      day = "Tuesday";
+      break;
+    case 3:
+      day = "Wednesday";
+      break;
+    case 4:
+      day = "Thursday";
+      break;
+    case 5:
+      day = "Friday";
+      break;
+    case 6:
+      day = "Saturday";
+      break;
+    default:
+      day = "Unexpected Error!!";
+      break;
   }
+
+  res.render("list", { weekDay: day });
 });
 
 app.listen(3000, () => {
