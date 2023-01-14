@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>To Do List</title>
-</head>
-<body>
+<%- include("header") -%>  
     <div class="box" id="heading">
-        <h1><%= weekDay %></h1>
+        <h1><%= ListTitle %></h1>
     </div>
     <div class="box">
         <% for(var i =0; i<itemArray.length; i++){%>
@@ -19,10 +12,7 @@
 
         <form class="" action="/" method="post">
             <input type="text" name="newInput" placeholder="New Item" autocomplete="off">
-            <button type="submit" name="button">+</button>
+            <button type="submit" name="list" value="<%= ListTitle %>">+</button>
         </form>
     </div>
-
-    
-</body>
-</html>
+<%- include("footer") -%>  
